@@ -1,0 +1,40 @@
+<!--miniprogram/pages/main/main.wxml-->
+
+<view>
+    <view class="topbar">
+        <view class="top-block">
+            <text class="text-top-top">今日复习</text>
+            <text class="text-top-bottom">0/0</text>
+        </view>
+        <view class="top-block">
+            <text class="text-top-top">今日新词</text>
+            <text class="text-top-bottom">50/200</text>
+        </view>
+        <view class="top-block">
+            <text class="text-top-top">学习时间</text>
+            <text class="text-top-bottom">2min</text>
+        </view>
+    </view>
+
+    <view class="exam-pattern">
+        <view class="easymark">
+            <image class="icon-easymark" src="../../images/icons/easymark.png"/>
+            <text class="text-easymark">标记为太简单</text>
+        </view>
+        <text class="text-word">brace</text>
+        <view class="pronouncation">
+            <image class="icon-pronouncation" src="../../images/icons/sound.png/"/>
+            <!-- <text class="icon-pronouncation">[--]</text> -->
+            <text class="text-soundmark">/breis/</text>
+        </view>
+        <text class="text-hint">根据例句，判断释义</text>
+        <view class="text-sentence">The fresh air of the September morning braced him.</view>
+        <view class="button-container">
+            <view class="button-remember">想起来了</view>
+            <view class="button-forget">没想起来</view>
+        </view>
+    </view>
+
+    <view class="memory-pattern">
+    </view>
+</view>

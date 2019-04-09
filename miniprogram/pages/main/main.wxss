@@ -1,0 +1,140 @@
+/* miniprogram/pages/main/main.wxss */
+
+.topbar{
+    height: 90rpx;
+    padding-top: 25rpx;
+    /* background: rgb(234, 204, 252); */
+    border-bottom: solid;
+    border-width: 7rpx;
+    border-color: rgb(247, 247, 247);
+}
+
+.top-block{
+    width: 250rpx;
+    /* height: 100rpx; */
+    float: left;
+    /* background: rgb(255, 181, 120); */
+}
+
+.text-top-top{
+    text-align: center;
+    display: block;
+    font-size: 27rpx;
+    /* background: rgb(116, 240, 105); */
+    color: rgb(148, 148, 148);
+}
+
+.text-top-bottom{
+    margin-top: 5rpx;
+    text-align: center;
+    display: block;
+    font-size: 25rpx;
+    /* background: rgb(105, 214, 233); */
+    color: rgb(85, 85, 85);
+    font-weight: bold;
+}
+
+.easymark{
+    width: 35%;
+    right: 0;
+    position: fixed;
+    background: rgb(243, 243, 243);
+    top: 13%;
+    height: 70rpx;
+    border-radius: 15% 0% 0% 15% / 50% 0% 0% 50%;
+}
+
+.icon-easymark{
+    position: relative;
+    margin-left: 20rpx;
+    top: 10rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.text-easymark{
+    font-size: 28rpx;
+    line-height: 70rpx;
+    color: rgb(168, 168, 168);
+    margin-left: 10rpx;
+}
+
+.text-word{
+    /* background: rgb(255, 218, 218); */
+    color: rgb(49, 49, 49);
+    display: block;
+    text-align: center;
+    margin-top: 30%;
+    font-size: 70rpx;
+    font-weight: bold;
+}
+
+.pronouncation{
+    height: 50rpx;
+    margin-top: 20rpx;
+    /* background: rgb(224, 255, 180); */
+    text-align: center;
+}
+
+.icon-pronouncation{
+    position: relative;
+    top: 7.5rpx;
+    height: 40rpx;
+    width: 40rpx;
+    /* background: rgb(248, 167, 255); */
+}
+
+.text-soundmark{
+    /* background: rgb(184, 241, 255); */
+    color: rgb(156, 156, 156);
+    font-size: 30rpx;
+    margin-left: 10rpx;
+}
+
+.text-hint{
+    /* background: rgb(255, 189, 189); */
+    display: block;
+    text-align: center;
+    margin-top: 15%;
+    font-size: 27rpx;
+    color: rgb(155, 155, 155); 
+}
+
+.text-sentence{
+    /* background: #18bd99; */
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+    font-size: 32rpx;
+    color: rgb(100, 100, 100);
+}
+
+.button-container{
+    position: fixed;
+    height: 18%;
+    bottom: 0;
+    width: 100%;
+    /* background: #ced898; */
+}
+
+.button-bottom, .button-remember, .button-forget{
+    margin: auto;
+    width: 86%;
+    text-align: center;
+    border-radius: 5.5%  / 50% ;
+    line-height: 80rpx;
+    color: white;
+    font-size: 30rpx;
+}
+
+.button-remember{
+    bottom: 12%;
+    background:#18bd99;
+}
+
+.button-forget{
+    margin-top: 20rpx;
+    bottom: 5%;
+    background: #ff7f50;
+}
