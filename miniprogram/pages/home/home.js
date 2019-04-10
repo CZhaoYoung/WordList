@@ -1,25 +1,18 @@
-// miniprogram/pages/main/main.js
-var utils = require("../../utils/utils");
-var that;
-
+// miniprogram/pages/home/home.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    pattern: 1,
-    sentenceString : "The fresh air of the September morning braced him.",
-    sentence: []
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    that =this;
-    this.data.sentence = utils.parseSentence(this.data.sentenceString, "braced");
-    console.log(this.data.sentence)
+
   },
 
   /**
@@ -71,11 +64,9 @@ Page({
 
   },
 
-  changePattern: function() {
-    var pattern = that.data.pattern;
-    pattern = ~pattern;
-    that.setData({
-      pattern: pattern
+  startMain: function() {
+    wx.navigateTo({
+      url: '../main/main'
     })
   }
 })

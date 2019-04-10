@@ -16,7 +16,7 @@
         </view>
     </view>
 
-    <view class="exam-pattern">
+    <view class="exam-pattern" wx:if="{{pattern}}">
         <view class="easymark">
             <image class="icon-easymark" src="../../images/icons/easymark.png"/>
             <text class="text-easymark">标记为太简单</text>
@@ -28,13 +28,32 @@
             <text class="text-soundmark">/breis/</text>
         </view>
         <text class="text-hint">根据例句，判断释义</text>
-        <view class="text-sentence">The fresh air of the September morning braced him.</view>
+        <view class="text-sentence" wx:for="{{sentence}}">
+        
+        </view>
         <view class="button-container">
-            <view class="button-remember">想起来了</view>
-            <view class="button-forget">没想起来</view>
+            <view class="button-remember" bindtap="changePattern">想起来了</view>
+            <view class="button-forget" bindtap="changePattern">没想起来</view>
         </view>
     </view>
 
-    <view class="memory-pattern">
+    <view class="memory-pattern" wx:else>
+        <view class="backout-container">
+            <text class="text-backout-grey">该词今天将不再安排复习.</text>
+            <text class="text-backout-green">撤销</text>
+        </view>
+        <view class="wordinfo-container">
+            <text class="text-word-m">versatile</text>
+            <image class="icon-pronouncation-m" src="../../images/icons/sound.png/"/>
+            <text class="text-soundmark-m">/breis/</text>
+        </view>
+        <view class="dictionary-container">
+            <text class="text-title">词典释义</text>
+            <text class="text-content">adj. 多才多艺的，多方面的，多用途的</text>
+            <text class="text-title">例句</text>
+            <text class="text-content">He's a versatile actor who has played a wide variety of parts.</text>
+            <text class="text-content">他是个多才多艺的演员，扮演过各种各样的角色。</text>
+        </view>
+        <view class="button-next" bindtap="changePattern">下一个</view>
     </view>
 </view>

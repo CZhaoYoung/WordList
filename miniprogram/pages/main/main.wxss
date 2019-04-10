@@ -34,6 +34,8 @@
     font-weight: bold;
 }
 
+/* exam-pattern */
+
 .easymark{
     width: 35%;
     right: 0;
@@ -137,4 +139,95 @@
     margin-top: 20rpx;
     bottom: 5%;
     background: #ff7f50;
+}
+
+/* memory-pattern */
+
+.backout-container{
+    background: rgb(252, 252, 252);
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 27rpx;
+}
+
+.text-backout-grey{
+    margin-left: 40rpx;
+    color: rgb(212, 212, 212);
+    font-weight: bold;
+}
+
+.text-backout-green{
+    margin-left: 20rpx;
+    color: #18bd99;
+    font-weight: bold;
+}
+
+.wordinfo-container{
+    /* background: rgb(255, 214, 214); */
+    padding: 40rpx;
+    border-bottom: solid;
+    border-width: 4rpx;
+    border-color: rgb(236, 236, 236);
+}
+
+.text-word-m{
+    /* background: rgb(198, 255, 198); */
+    color: rgb(49, 49, 49);
+    font-size: 65rpx;
+    font-weight: bold;
+}
+
+.icon-pronouncation-m{
+    /* background: rgb(181, 232, 255); */
+    float: right;
+    height: 55rpx;
+    width: 55rpx;
+    margin-top: 12.5rpx;
+}
+
+.text-soundmark-m{
+    display: block;
+    /* background: #ffffc6; */
+    margin-top: 10rpx;
+    color: rgb(184, 184, 184);
+    font-size: 35rpx;
+}
+
+.dictionary-container{
+    /* background: rgb(255, 218, 218); */
+    padding: 20rpx 30rpx 50rpx 40rpx;
+    border-bottom: solid;
+    border-width: 6rpx;
+    border-color: rgb(236, 236, 236);
+}
+
+.text-title{
+    /* background: rgb(249, 255, 198); */
+    display: block;
+    font-size: 30rpx;
+    color: #18bd99;
+    font-weight: bold;
+    margin-top: 30rpx;
+}
+
+.text-content{
+    /* background: rgb(189, 245, 255); */
+    font-size: 31rpx;
+    display: block;
+    margin-top: 20rpx;
+    margin-right: 70rpx;
+    color: rgb(47, 47, 47);
+}
+
+.button-next{
+    width: 86%;
+    text-align: center;
+    border-radius: 5.5%  / 50% ;
+    line-height: 80rpx;
+    color: white;
+    font-size: 30rpx;
+    position: fixed;
+    bottom: 5%;
+    left: 7%;
+    background:#18bd99;
 }
