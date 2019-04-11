@@ -28,8 +28,7 @@
             <text class="text-soundmark">/breis/</text>
         </view>
         <text class="text-hint">根据例句，判断释义</text>
-        <view class="text-sentence" wx:for="{{sentence}}">
-        
+        <view class="text-sentence">{{sentenceString}}
         </view>
         <view class="button-container">
             <view class="button-remember" bindtap="changePattern">想起来了</view>
@@ -51,8 +50,16 @@
             <text class="text-title">词典释义</text>
             <text class="text-content">adj. 多才多艺的，多方面的，多用途的</text>
             <text class="text-title">例句</text>
-            <text class="text-content">He's a versatile actor who has played a wide variety of parts.</text>
-            <text class="text-content">他是个多才多艺的演员，扮演过各种各样的角色。</text>
+            <view class="text-content">
+                <view wx:for="{{sentence}}" wx:key="{{sentence.word}}">
+                    <text wx:if="{{item.type==0}}" class="text-content-sentence-word" data-index="{{index}}">{{item.word}}</text>
+                    <text wx:if="{{item.selected}}" class="text-content-sentence-word-selected" data-index="{{index}}" bindtap='selectWord'>{{item.word}}</text>
+                    <text wx:elif="{{item.type==1}}" class="text-content-sentence-word" data-index="{{index}}" bindtap='selectWord'>{{item.word}}</text>
+                    <text wx:elif="{{item.type==2}}" class="text-content-sentence-word-major" data-index="{{index}}" bindtap='selectWord'>{{item.word}}</text>
+                    <text class="text-content-sentence-word" decode='true'>&nbsp;</text>
+                </view>
+            </view>
+            <view class="text-content">他是个多才多艺的演员，扮演过各种各样的角色。</view>
         </view>
         <view class="button-next" bindtap="changePattern">下一个</view>
     </view>

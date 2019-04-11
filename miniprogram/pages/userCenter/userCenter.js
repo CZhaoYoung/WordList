@@ -1,27 +1,18 @@
-// miniprogram/pages/main/main.js
-var utils = require("../../utils/utils");
-var that;
-
+// miniprogram/pages/userCenter/userCenter.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    pattern: 0,
-    sentenceString : "The fresh air of the September morning braced him.",
-    sentence: []
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    that = this;
-    this.setData({
-      sentence : utils.parseSentence(this.data.sentenceString, "braced")
-    })
-    console.log(this.data.sentence);
+
   },
 
   /**
@@ -71,22 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  changePattern: function() {
-    var pattern = that.data.pattern;
-    pattern = !pattern;
-    that.setData({
-      pattern: pattern
-    })
-  },
-
-  selectWord: function(e) {
-    console.log(e);
-    var sentence = this.data.sentence;
-    sentence[e.currentTarget.dataset.index].selected = !sentence[e.currentTarget.dataset.index].selected;
-    that.setData({
-      sentence: sentence
-    })
   }
 })

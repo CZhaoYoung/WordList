@@ -217,6 +217,22 @@
     margin-top: 20rpx;
     margin-right: 70rpx;
     color: rgb(47, 47, 47);
+    overflow: hidden;
+}
+
+.text-content-sentence-word, .text-content-sentence-word-selected, .text-content-sentence-word-major{
+  float: left;
+}
+
+.text-content-sentence-word-selected{
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  background: rgb(35, 192, 158);
+}
+
+.text-content-sentence-word-major{
+  color: rgb(35, 192, 158);
+  font-weight: bold;
 }
 
 .button-next{

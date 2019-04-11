@@ -17,7 +17,7 @@
 
 .sign-num-text{
     font-size: 90rpx;
-    color: #333333;
+    color: rgb(29, 214, 159);
 }
 
 .sign-num-day-text{
@@ -129,7 +129,7 @@
 
 .task-container{
     /* background: rgb(255, 190, 190); */
-    width: 100%;
+    width: 90%;
     margin-top: 70rpx;
 }
 

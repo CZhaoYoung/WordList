@@ -1,14 +1,15 @@
 {
   "pages": [
-    "pages/main/main",
     "pages/home/home",
+    "pages/main/main",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib"
+    "pages/chooseLib/chooseLib",
+    "pages/userCenter/userCenter"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -17,7 +18,7 @@
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
   },
-  "tabBar":{
+  "tabBar": {
     "list": [
       {
         "pagePath": "pages/home/home",
@@ -26,6 +27,10 @@
       {
         "pagePath": "pages/index/index",
         "text": "index"
+      },
+      {
+        "pagePath": "pages/userCenter/userCenter",
+        "text": "user"
       }
     ]
   }
