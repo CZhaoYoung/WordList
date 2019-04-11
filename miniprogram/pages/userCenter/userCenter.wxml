@@ -8,7 +8,7 @@
         <text class="userinfo-userid-text">nowords ID : tonfu</text>
     </view>
     <view class="trisaction-block">
-        <view class="trisaction">
+        <view class="trisaction" bindtap="toTaskPage">
             <view class="trisaction-top-container">
                 <image  class="trisaction-top-icon" src="../../images/icons/book_uc.png"/>
             </view>

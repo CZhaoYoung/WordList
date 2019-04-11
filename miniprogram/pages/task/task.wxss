@@ -20,7 +20,7 @@ page{
 .plan-guide-text-right{
     margin-left: 15rpx;
     padding: 5rpx 10rpx 5rpx 10rpx;
-    border-radius: 20%;
+    border-radius: 15rpx;
     font-size: 28rpx;
     background: rgb(37, 209, 157);
     color: white;
@@ -197,7 +197,7 @@ page{
     font-weight: bold;
     color: rgb(45, 204, 130);
     background: #c7fce4;
-    border-radius: 18%/50%;
+    border-radius: 25%/50%;
     padding: 0 20rpx 0 20rpx;
     float: right;
 }

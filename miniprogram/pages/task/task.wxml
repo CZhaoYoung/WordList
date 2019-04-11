@@ -15,7 +15,7 @@
                     <text class="plan-now-text">新词</text>
                 </view>
                 <view class="plan-now-change-icon-container">
-                    <image class="plan-now-change-icon" src="../../images/icons/email.png"/>
+                    <image class="plan-now-change-icon" src="../../images/icons/email.png" bindtap='toPlanPage'/>
                 </view>
                 <view class="plan-now-progress-text-container">
                     <view class="plan-now-progress-text">
@@ -57,7 +57,6 @@
                     </view>
                     <view class="books-select-button">切换</view>
                 </view>
-
             </view>
         </view>
     </view>

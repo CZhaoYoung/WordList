@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/task/task",
     "pages/home/home",
+    "pages/plan/plan",    
+    "pages/task/task",
     "pages/userCenter/userCenter",
     "pages/main/main",
     "pages/index/index",
