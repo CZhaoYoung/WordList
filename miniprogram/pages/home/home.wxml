@@ -4,7 +4,7 @@
         <text class="sign-guide-text">我在扇贝单词学习</text>
         <text class="sign-num-text">12</text>
         <text class="sign-num-day-text">天</text>
-        <view class="calendar">
+        <view class="calendar" bindtap='toCalendarPage'>
             <text class="calendar-text">打卡日历</text>
             <image class="calendar-icon" src="../../images/icons/calendar.png"/>
         </view>

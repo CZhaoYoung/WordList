@@ -1,7 +1,10 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/plan/plan",    
+        "pages/home/home",
+        "pages/plan/plan",
+
+    "pages/calendar/calendar",
+
     "pages/task/task",
     "pages/userCenter/userCenter",
     "pages/main/main",

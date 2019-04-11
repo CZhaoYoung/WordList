@@ -14,7 +14,7 @@
             </view>
             <text class="trisaction-bottom-text">任务设置</text>
         </view>
-        <view class="trisaction">
+        <view class="trisaction" bindtap="toCalendarPage">
             <view class="trisaction-top-container">
                 <image  class="trisaction-top-icon" src="../../images/icons/calendar_uc.png"/>
             </view>

@@ -22,7 +22,7 @@
             <text class="set-guide-left-text">每日学习任务</text>
             <text class="set-guide-right-text">完成天数</text>
         </view>
-        <picker-view indicator-style="height: 50px; width:90%; margin-left:5%; border: none; background: #ececec; opacity:0.3; border-radius: 10px;" style=" width: 100%; height: 300px;">
+        <picker-view indicator-style-class="set-picker-indicator" class="set-picker">
             <picker-view-column>
                 <view class="set-picker-line" wx:for="{{pickerDataRaw}}">
                     <view class="set-picker-left">

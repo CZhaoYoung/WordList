@@ -75,5 +75,11 @@ Page({
     wx.navigateTo({
       url: '../task/task'
     })
+  },
+
+  toCalendarPage: function(){
+    wx.navigateTo({
+      url: '../calendar/calendar',
+    })
   }
 })
