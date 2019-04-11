@@ -10,7 +10,7 @@
 	},
 	"appid": "wx5277f81a60fe35e5",
 	"projectname": "noWords_cloud",
-	"libVersion": "2.2.5",
+	"libVersion": "2.6.5",
 	"condition": {
 		"search": {
 			"current": -1,

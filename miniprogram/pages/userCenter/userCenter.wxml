@@ -1,2 +1,68 @@
 <!--miniprogram/pages/userCenter/userCenter.wxml-->
-<text>miniprogram/pages/userCenter/userCenter.wxml</text>
+<view class="container">
+    <view class="userinfo-block">
+        <view class="userinfo-avatar-container">
+            <image class="userinfo-avatar-image" src="{{userInfo.avatarUrl}}" />
+        </view>
+        <text class="userinfo-nickname-text">{{userInfo.nickName}}</text>
+        <text class="userinfo-userid-text">nowords ID : tonfu</text>
+    </view>
+    <view class="trisaction-block">
+        <view class="trisaction">
+            <view class="trisaction-top-container">
+                <image  class="trisaction-top-icon" src="../../images/icons/book_uc.png"/>
+            </view>
+            <text class="trisaction-bottom-text">任务设置</text>
+        </view>
+        <view class="trisaction">
+            <view class="trisaction-top-container">
+                <image  class="trisaction-top-icon" src="../../images/icons/calendar_uc.png"/>
+            </view>
+            <text class="trisaction-bottom-text">打卡记录</text>
+        </view>
+        <view class="trisaction">
+            <view class="trisaction-top-container">
+                <image  class="trisaction-top-icon" src="../../images/icons/message_uc.png"/>
+            </view>
+            <text class="trisaction-bottom-text">打卡提醒</text>
+        </view>
+    </view>
+    <view class="options-block">
+        <view class="option">
+            <view class="option-icon-container">
+                <image class="option-icon" src="../../images/icons/email.png"/>
+            </view>
+            <text class="option-text">问题反馈</text>
+            <view class="option-icon-right-container">
+                <image  class="option-icon-right" src="../../images/icons/right.png"/>
+            </view>
+        </view>
+        <view class="option">
+            <view class="option-icon-container">
+                <image class="option-icon" src="../../images/icons/file.png"/>
+            </view>
+            <text class="option-text">关于我们</text>
+            <view class="option-icon-right-container">
+                <image  class="option-icon-right" src="../../images/icons/right.png"/>
+            </view>
+        </view>
+        <view class="option">
+            <view class="option-icon-container">
+                <image class="option-icon" src="../../images/icons/star.png"/>
+            </view>
+            <text class="option-text">分享小程序</text>
+            <view class="option-icon-right-container">
+                <image  class="option-icon-right" src="../../images/icons/right.png"/>
+            </view>
+        </view>
+        <view class="option">
+            <view class="option-icon-container">
+                <image  class="option-icon" src="../../images/icons/exit.png"/>
+            </view>
+            <text class="option-text">退出小程序</text>
+            <view class="option-icon-right-container">
+                <image  class="option-icon-right" src="../../images/icons/right.png"/>
+            </view>
+        </view>
+    </view>
+</view>

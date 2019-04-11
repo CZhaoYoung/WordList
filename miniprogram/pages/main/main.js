@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pattern: 0,
+    pattern: 1,
     sentenceString : "The fresh air of the September morning braced him.",
     sentence: []
   },

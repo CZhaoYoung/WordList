@@ -1,26 +1,19 @@
-// miniprogram/pages/userCenter/userCenter.js
-var data = require("../../utils/data.js");
-var that;
-
+// miniprogram/pages/task/task.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: {}
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    that = this;
-    this.setData({
-      userInfo: data.getFakeUserInfo()
-    })
-    console.log(this.data.userInfo);
-  }, 
+
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
