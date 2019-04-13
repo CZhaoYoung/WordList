@@ -17,10 +17,14 @@
             <text class="vocabulary-guide-text">词表</text>
         </view>
         <view class="vocabulary-progress">
-            <text class="vocabulary-progress-text-left">已完成12%</text>
-            <text class="vocabulary-progress-text-right">120/1000词</text>
-            <view class="vocabulary-progress-bar"/>
-            <view class="vocabulary-progress-bar-mask"/>
+            <view style="overflow: hidden;">
+                <text class="vocabulary-progress-text-left">已完成12%</text>
+                <text class="vocabulary-progress-text-right">120/1000词</text>
+            </view>
+            <view class="vocabulary-progress-bar-container">
+                <view class="vocabulary-progress-bar"/>
+                <view class="vocabulary-progress-bar-mask"/>
+            </view>
         </view>
     </view>
     <view class="task-container" bindtap="toDictionary">

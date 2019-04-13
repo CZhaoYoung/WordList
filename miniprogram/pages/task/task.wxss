@@ -102,7 +102,7 @@ page{
 }
 
 .plan-now-progress-bar-mask{
-    height: 5rpx;
+    height: 7rpx;
     width: 50%;
     background: rgb(49, 221, 178);
 }

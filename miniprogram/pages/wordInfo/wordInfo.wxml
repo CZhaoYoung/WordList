@@ -1,0 +1,24 @@
+<!--miniprogram/pages/wordInfo/wordInfo.wxml-->
+<view class="container">
+    <view class="wordinfo-container">
+        <text class="text-word-m">versatile</text>
+        <image class="icon-pronouncation-m" src="../../images/icons/sound.png/"/>
+        <text class="text-soundmark-m">/breis/</text>
+    </view>
+    <view class="dictionary-container">
+        <text class="text-title">词典释义</text>
+        <text class="text-content">adj. 多才多艺的，多方面的，多用途的</text>
+        <text class="text-title">例句</text>
+        <view class="text-content">
+            <view wx:for="{{sentence}}" wx:key="{{sentence.word}}">
+                <text wx:if="{{item.type==0}}" class="text-content-sentence-word" data-index="{{index}}">{{item.word}}</text>
+                <text wx:if="{{item.selected}}" class="text-content-sentence-word-selected" data-index="{{index}}" bindtap='selectWord'>{{item.word}}</text>
+                <text wx:elif="{{item.type==1}}" class="text-content-sentence-word" data-index="{{index}}" bindtap='selectWord'>{{item.word}}</text>
+                <text wx:elif="{{item.type==2}}" class="text-content-sentence-word-major" data-index="{{index}}" bindtap='selectWord'>{{item.word}}</text>
+                <text class="text-content-sentence-word" decode='true'>&nbsp;</text>
+            </view>
+        </view>
+        <view class="text-content">他是个多才多艺的演员，扮演过各种各样的角色。</view>
+    </view>
+    <view class="button-next" bindtap="changePattern">添加到单词本 </view>
+</view>

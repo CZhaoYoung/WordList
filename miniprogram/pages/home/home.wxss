@@ -112,16 +112,23 @@
     float: right;
 }
 
+.vocabulary-progress-bar-container{
+    width: 100%;
+    position: relative;
+    margin-top: 15rpx;
+}
+
 .vocabulary-progress-bar,.vocabulary-progress-bar-mask{
     height: 4rpx;
     background: rgb(233, 233, 233);
-    top: 40rpx;
-    position: relative;
+    top: 0rpx;
+    position: absolute;
+    width: 100%;
 }
 
 .vocabulary-progress-bar-mask{
     background: rgb(60, 219, 185);
-    top: 36rpx;
+    top: 0rpx;
     width: 50%;
 }
 
