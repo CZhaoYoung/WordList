@@ -74,5 +74,11 @@ Page({
     wx.navigateTo({
       url: '../calendar/calendar',
     })
+  },
+
+  toDictionary: function(){
+    wx.navigateTo({
+      url: '../dictionary/dictionary',
+    })
   }
 })

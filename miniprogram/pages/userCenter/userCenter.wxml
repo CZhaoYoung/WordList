@@ -21,7 +21,7 @@
             <text class="trisaction-bottom-text">打卡记录</text>
         </view>
         <view class="trisaction">
-            <view class="trisaction-top-container">
+            <view class="trisaction-top-container" bindtap="toRemindPage">
                 <image  class="trisaction-top-icon" src="../../images/icons/message_uc.png"/>
             </view>
             <text class="trisaction-bottom-text">打卡提醒</text>

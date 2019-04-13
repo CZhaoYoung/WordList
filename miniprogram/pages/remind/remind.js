@@ -1,26 +1,19 @@
-// miniprogram/pages/userCenter/userCenter.js
-var data = require("../../utils/data.js");
-var that;
-
+// miniprogram/pages/remind/remind.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: {}
+    pickerData: ["00:00", "01:00", "02:00", "03:00"]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    that = this;
-    this.setData({
-      userInfo: data.getFakeUserInfo()
-    })
-    console.log(this.data.userInfo);
-  }, 
+
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -69,23 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  toTaskPage: function() {
-    wx.navigateTo({
-      url: '../task/task'
-    })
-  },
-
-  toCalendarPage: function(){
-    wx.navigateTo({
-      url: '../calendar/calendar',
-    })
-  },
-
-  toRemindPage: function(){
-    wx.navigateTo({
-      url: '../remind/remind',
-    })
   }
 })

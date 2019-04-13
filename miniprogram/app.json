@@ -1,11 +1,14 @@
 {
   "pages": [
-        "pages/dictionary/dictionary",
-    "pages/home/home",
+            "pages/home/home",
+        "pages/remind/remind",
+        "pages/plan/plan",
+        "pages/task/task",
+    "pages/dictionary/dictionary",
     "pages/main/main",
-    "pages/plan/plan",
+
     "pages/calendar/calendar",
-    "pages/task/task",
+
     "pages/userCenter/userCenter",
     "pages/index/index",
     "pages/userConsole/userConsole",
@@ -13,7 +16,8 @@
     "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib"
+    "pages/chooseLib/chooseLib",
+    "pages/library/library"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

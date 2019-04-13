@@ -4,7 +4,7 @@
         <text class="plan-guide-text-left">我的学习任务</text>
         <text class="plan-guide-text-right">正在学</text>
         <view class="plan-now-block">
-            <view class="plan-now-book-image-container">
+            <view class="plan-now-book-image-container" bindtap='toDictionary'>
                 <image class="plan-now-book-image" src="../../images/books/book1.png"/>
             </view>
             <view class="plan-now-book-info">
@@ -15,7 +15,7 @@
                     <text class="plan-now-text">新词</text>
                 </view>
                 <view class="plan-now-change-icon-container">
-                    <image class="plan-now-change-icon" src="../../images/icons/email.png" bindtap='toPlanPage'/>
+                    <image class="plan-now-change-icon" src="../../images/icons/email.png" catchtap='toPlanPage'/>
                 </view>
                 <view class="plan-now-progress-text-container">
                     <view class="plan-now-progress-text">
@@ -36,10 +36,10 @@
     <view class="books-block">
         <view class="books-guide">
             <text class="books-guide-text">我的单词书</text>
-            <view class="books-add-button">添加新书</view>
+            <view class="books-add-button" catchtap="toLibrary">添加新书</view>
         </view>
         <view class="books-container">
-            <view class="books-image-container">
+            <view class="books-image-container" bindtap="toDictionary">
                 <image class="books-image" src="../../images/books/book2.png" />
             </view>
             <view class="books-info-container">

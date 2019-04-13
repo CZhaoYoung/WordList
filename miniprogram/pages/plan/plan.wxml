@@ -1,4 +1,4 @@
-2aaassssssasaassas<!--miniprogram/pages/plan/plan.wxml-->
+<!--miniprogram/pages/plan/plan.wxml-->
 <view class="container">
     <view class="plan-block">
         <view class="plan-now-block">
@@ -22,7 +22,7 @@
             <text class="set-guide-left-text">每日学习任务</text>
             <text class="set-guide-right-text">完成天数</text>
         </view>
-        <picker-view indicator-style-class="set-picker-indicator" class="set-picker">
+        <picker-view indicator-class="set-picker-indicator" class="set-picker">
             <picker-view-column>
                 <view class="set-picker-line" wx:for="{{pickerDataRaw}}">
                     <view class="set-picker-left">

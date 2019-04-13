@@ -71,5 +71,17 @@ Page({
       fail: function(res) {},
       complete: function(res) {},
     })
+  },
+
+  toDictionary: function () {
+    wx.navigateTo({
+      url: '../dictionary/dictionary',
+    })
+  },
+
+  toLibrary: function(){
+    wx.navigateTo({
+      url: '../library/library',
+    })
   }
 })

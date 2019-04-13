@@ -1,26 +1,19 @@
-// miniprogram/pages/userCenter/userCenter.js
-var data = require("../../utils/data.js");
-var that;
-
+// miniprogram/pages/library/library.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: {}
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    that = this;
-    this.setData({
-      userInfo: data.getFakeUserInfo()
-    })
-    console.log(this.data.userInfo);
-  }, 
+
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -71,21 +64,9 @@ Page({
 
   },
 
-  toTaskPage: function() {
+  toDictionary: function () {
     wx.navigateTo({
-      url: '../task/task'
+      url: '../dictionary/dictionary',
     })
   },
-
-  toCalendarPage: function(){
-    wx.navigateTo({
-      url: '../calendar/calendar',
-    })
-  },
-
-  toRemindPage: function(){
-    wx.navigateTo({
-      url: '../remind/remind',
-    })
-  }
 })

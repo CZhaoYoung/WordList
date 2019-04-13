@@ -9,7 +9,7 @@
             <image class="calendar-icon" src="../../images/icons/calendar.png"/>
         </view>
     </view>
-    <view class="vocabulary-container">
+    <view class="vocabulary-container" bindtap="toDictionary">
         <image class="vocabulary-background-image" src="../../images/backgrounds/nature.jpg"/>
         <text class="vocabulary-name-text">六级考纲词汇(2019版)</text>
         <view class="vocabulary-guide">
@@ -23,7 +23,7 @@
             <view class="vocabulary-progress-bar-mask"/>
         </view>
     </view>
-    <view class="task-container">
+    <view class="task-container" bindtap="toDictionary">
         <text class="task-guide-text">· 今日任务 ·</text>
         <view class="task-info">
             <view class="task-info-trisection">

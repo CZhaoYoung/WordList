@@ -1,0 +1,20 @@
+<!--miniprogram/pages/library/library.wxml-->
+<view class="books-block">
+    <view class="book-container">
+        <view class="books-image-container" bindtap="toDictionary">
+            <image class="books-image" src="../../images/books/book2.png" />
+            <view class="books-vocabulary">2600</view>
+            <view wx:if="{{1}}" class="books-star"/>
+            <view wx:else class="books-unstar"/>
+        </view>
+    </view>
+    <view class="book-container">
+        <view class="books-image-container" bindtap="toDictionary">
+            <image class="books-image" src="../../images/books/book2.png" />
+            <view class="books-vocabulary">2600</view>
+            <view wx:if="{{0}}" class="books-star"/>
+            <view wx:else class="books-unstar"/>
+        </view>
+    </view>
+</view>
+
