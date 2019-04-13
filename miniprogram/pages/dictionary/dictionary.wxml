@@ -1,0 +1,60 @@
+<!--miniprogram/pages/dictionary/dictionary.wxml-->
+<view class="top-bar">
+    <view wx:if="{{0}}">
+        <view class="top-bar-element">
+            <text class="top-bar-element-text">未学习</text>
+            <view wx:if="{{1}}" class="top-bar-bottom"/>
+        </view>
+        <view class="top-bar-element">
+            <text class="top-bar-element-text">正在学</text>
+            <view wx:if="{{0}}" class="top-bar-bottom"/>
+        </view>
+        <view class="top-bar-element">
+            <text class="top-bar-element-text">已掌握</text>
+            <view wx:if="{{0}}" class="top-bar-bottom"/>
+        </view>
+        <view class="top-bar-element">
+            <text class="top-bar-element-text">简单词</text>
+            <view wx:if="{{0}}" class="top-bar-bottom"/>
+        </view>
+        <view class="summary-switch-container">
+            <text class="summary-switch-text">释义遮挡</text>
+            <switch  checked color="#7bed9f" style="height: 30px;"/>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="top-bar-element" style="width:50%">
+            <text class="top-bar-element-text">今日新词</text>
+            <view wx:if="{{1}}" class="top-bar-bottom"/>
+        </view>
+        <view class="top-bar-element" style="width:50%">
+            <text class="top-bar-element-text">今日复习</text>
+            <view wx:if="{{0}}" class="top-bar-bottom"/>
+        </view>
+        <view class="summary-switch-container">
+            <text class="summary-switch-text">释义遮挡</text>
+            <switch  checked color="#7bed9f" style="height: 30px;"/>
+        </view>
+    </view>
+</view>
+
+<view class="word">
+    <view class="word-top">
+        <text class="word-text">intervene</text>
+        <view class="word-icon-container">
+            <image class="word-icon" src="../../images/icons/sound.png"/>
+        </view>
+    </view>
+    <view wx:if="{{0}}" class="word-mask"/>
+    <view wx:else class="word-meaning">v.干涉,干预，阻挠</view>
+</view>
+<view class="word">
+    <view class="word-top">
+        <text class="word-text">intervene</text>
+        <view class="word-icon-container">
+            <image class="word-icon" src="../../images/icons/sound.png"/>
+        </view>
+    </view>
+    <view wx:if="{{1}}" class="word-mask"/>
+    <view wx:else class="word-meaning">v.干涉,干预，阻挠</view>
+</view>

@@ -16,7 +16,7 @@
         </view>
     </view>
 
-    <view class="exam-pattern" wx:if="{{pattern}}">
+    <view class="exam-pattern" wx:if="{{pattern==2}}">
         <view class="easymark">
             <image class="icon-easymark" src="../../images/icons/easymark.png"/>
             <text class="text-easymark">标记为太简单</text>
@@ -36,7 +36,7 @@
         </view>
     </view>
 
-    <view class="memory-pattern" wx:else>
+    <view class="memory-pattern" wx:elif="{{pattern==3}}">
         <view class="backout-container">
             <text class="text-backout-grey">该词今天将不再安排复习.</text>
             <text class="text-backout-green">撤销</text>
@@ -62,5 +62,37 @@
             <view class="text-content">他是个多才多艺的演员，扮演过各种各样的角色。</view>
         </view>
         <view class="button-next" bindtap="changePattern">下一个</view>
+    </view>
+
+    <view class="summary-pattern" wx:else>
+        <view class="summary-top">
+            <text class="summary-title-text">单词小结</text>
+            <view class="summary-switch-container">
+                <text class="summary-switch-text">释义遮挡</text>
+                <switch  checked color="#7bed9f" style="height: 30px;"/>
+            </view>
+        </view>
+        <view class="summary-words-container">
+            <view class="summary-word">
+                <view class="summary-word-top">
+                    <text class="summary-word-text">intervene</text>
+                    <view class="summary-word-icon-container">
+                        <image class="summary-word-icon" src="../../images/icons/sound.png"/>
+                    </view>
+                </view>
+                <view wx:if="{{0}}" class="summary-word-mask"/>
+                <view wx:else class="summary-word-meaning">v.干涉,干预，阻挠</view>
+            </view>
+            <view class="summary-word">
+                <view class="summary-word-top">
+                    <text class="summary-word-text">intervene</text>
+                    <view class="summary-word-icon-container">
+                        <image class="summary-word-icon" src="../../images/icons/sound.png"/>
+                    </view>
+                </view>
+                <view wx:if="{{1}}" class="summary-word-mask"/>
+                <view wx:else class="summary-word-meaning">v.干涉,干预，阻挠</view>
+            </view>
+        </view>
     </view>
 </view>

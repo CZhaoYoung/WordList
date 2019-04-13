@@ -247,3 +247,107 @@
     left: 7%;
     background:#18bd99;
 }
+/* summary-pattern */
+
+/*swtich整体大小及背景色*/
+.wx-switch-input{
+    width:60rpx !important;
+    height:36rpx !important;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+    width:60rpx !important;
+    height: 36rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+    width: 32rpx !important;
+    height: 32rpx !important;
+}
+
+.summary-top{
+    width: 90%;
+    margin:auto;
+    display: block;
+    /* background: rgb(255, 255, 255); */
+    overflow: hidden;
+    margin-top: 30rpx;
+    padding-bottom: 30rpx;
+}
+
+.summary-title-text{
+    font-size: 45rpx;
+    float: left;
+}
+
+.summary-switch-container{
+    float: right;
+    position: relative;
+    right: 20rpx;
+    top: 10rpx;
+}
+
+.summary-switch-text{
+    font-size: 30rpx;
+    color: #bbbbbb;
+    margin-right: 15rpx;
+}
+
+.summary-words-container{
+    width: 90%;
+    /* background: #dfff5; */
+    margin: auto;
+}
+
+.summary-word{
+    margin-top: 40rpx;
+    border-bottom: solid;
+    border-width: 5rpx;
+    border-color: #f0f0f0;
+}
+
+.summary-word-top{
+    overflow: hidden;
+}
+
+.summary-word-text{
+    font-weight: bold;
+    float: left;
+    /* background: rebeccapurple; */
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.summary-word-icon-container{
+    width: 60rpx;
+    height: 60rpx;
+    float: right;
+}
+
+.summary-word-icon{
+    height: 70%;
+    width: 80%;
+    margin-top: 15%;
+    margin-left: 10%;
+}
+
+.summary-word-mask{
+    border: solid;
+    border-radius: 10rpx;
+    border-width: 1rpx;
+    border-color: #eeeeee;
+    background: #fafafa;
+    height: 50rpx;
+    width: 99%;
+    display: block;
+    margin-top: 10rpx;
+    margin-bottom: 20rpx;
+}
+
+.summary-word-meaning{
+    margin-top: 10rpx;
+    font-size: 32rpx;
+    color: #959595;
+    letter-spacing: 0.05rem;
+    margin-bottom: 20rpx;
+}

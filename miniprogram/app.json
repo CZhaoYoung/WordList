@@ -1,13 +1,12 @@
 {
   "pages": [
-        "pages/home/home",
-        "pages/plan/plan",
-
+        "pages/dictionary/dictionary",
+    "pages/home/home",
+    "pages/main/main",
+    "pages/plan/plan",
     "pages/calendar/calendar",
-
     "pages/task/task",
     "pages/userCenter/userCenter",
-    "pages/main/main",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
