@@ -1,5 +1,10 @@
 /* miniprogram/pages/main/main.wxss */
 
+.blank{
+    height: 200rpx;
+    width: 100%;
+}
+
 .topbar{
     height: 90rpx;
     padding-top: 25rpx;
