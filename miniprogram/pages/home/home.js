@@ -1,18 +1,69 @@
 // miniprogram/pages/home/home.js
+var that
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    signedNum: 0,
+    newWordsNum: 0,
+    oldWordsNum: 0,
+    unstudyWordsNum: 0,
+    bookInfo:{},
+    progressType: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    that = this
+  },
 
+  setTaskInfo: function(){
+    var newWordsProgress = wx.getStorageSync('newWordsProgress')
+    var oldWordsProgress = wx.getStorageSync('oldWordsProgress')
+    var newWordsNum = newWordsProgress.totalNum
+    var oldWordsNum = oldWordsProgress.totalNum
+    var newWordsUnstudyNum = newWordsProgress.unstudyWords.length + newWordsProgress.studingWords.length  
+    var oldWordsUnstudyNum =  oldWordsProgress.studingWords.length + oldWordsProgress.unstudyWords.length
+    var unstudyWordsNum = newWordsUnstudyNum + oldWordsUnstudyNum
+    var type
+    if(newWordsUnstudyNum > 0){
+      type = 0
+    }
+    else if(oldWordsUnstudyNum > 0){
+      type = 1
+    }
+    else{
+      type = 2
+    }
+    that.setData({
+      newWordsNum: newWordsNum,
+      oldWordsNum: oldWordsNum,
+      unstudyWordsNum: unstudyWordsNum,
+      type: type
+    })
+  },
+
+  setSignedNum: function(){
+    var signedNum = 12
+    that.setData({
+      signedNum : signedNum
+    })
+  },
+
+  setBookInfo: function(){
+    var bookInfo = {
+      totalNum: 2340,
+      studiedNum: 242,
+      name : "六级考纲词汇(2019版)",
+      percentage: 12
+    }
+    that.setData({
+      bookInfo: bookInfo
+    })
   },
 
   /**
@@ -26,7 +77,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setTaskInfo()
+    this.setSignedNum()
+    this.setBookInfo()
   },
 
   /**
