@@ -2,6 +2,7 @@
 var angleX = Math.PI / 200
 var angleY = Math.PI / 200
 var angleZ = Math.PI / 200
+var tInt
 const app = getApp()
 const size = 550
 function rpx2px(rpx) {
@@ -197,6 +198,10 @@ Page({
     // this.innit()
   },
 
+  onUnload: function() {
+    clearInterval(tInt)
+  },
+
   init: function () {
     var words = this.data.words
     for (var i = 0; i < words.length; i++) {
@@ -206,7 +211,7 @@ Page({
       words[i].s = (words[i].z + size) / size
     }
     var ctx = wx.createCanvasContext('cloud');
-    setInterval(() => {
+    tInt = setInterval(() => {
       ctx.translate(rpx2px((size / 2 + (750 - size) / 2)), rpx2px((size / 2) + (750 - size) / 2))
       ctx.setFontSize(20)
       ctx.fillText('center', -ctx.measureText('center').width / 2, 0)
