@@ -1,23 +1,49 @@
 // miniprogram/pages/task/task.js
+var that
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    currentBookInfo:{},
+    myBooksList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that = this
+    this.refresh()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
+  refresh: function(){
+    var cBookInfo = {
+      name: "六级考纲词汇",
+      plan: {
+        new: 200,
+        old: 400
+      },
+      totalNum: 2340,
+      studiedNum: 242,
+      imgUrl: "../../images/books/book1.png"
+    }
+    that.setData({
+      currentBookInfo: cBookInfo
+    })
+
+    var bookList = []
+    bookList.push(cBookInfo)
+    bookList.push(cBookInfo)
+    that.setData({
+      myBooksList: bookList
+    })
+  },
+
   onReady: function () {
 
   },

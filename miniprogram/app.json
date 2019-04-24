@@ -1,12 +1,13 @@
 {
   "pages": [
+        "pages/task/task",
         "pages/home/home",
         "pages/dictionary/dictionary",
 
     "pages/wordInfo/wordInfo",
     "pages/remind/remind",
     "pages/plan/plan",
-    "pages/task/task",
+
 
     "pages/main/main",
     "pages/calendar/calendar",

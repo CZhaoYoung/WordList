@@ -5,13 +5,13 @@
         <text class="plan-guide-text-right">正在学</text>
         <view class="plan-now-block">
             <view class="plan-now-book-image-container" bindtap='toDictionary'>
-                <image class="plan-now-book-image" src="../../images/books/book1.png"/>
+                <image class="plan-now-book-image" src="{{currentBookInfo.imgUrl}}"/>
             </view>
             <view class="plan-now-book-info">
-                <view class="plan-now-book-name-text">六级考纲词汇</view>
+                <view class="plan-now-book-name-text">{{currentBookInfo.name}}</view>
                 <view class="plan-now-text-container">
                     <text class="plan-now-text">每天</text>
-                    <text class="plan-now-text">200</text>
+                    <text class="plan-now-text">{{currentBookInfo.plan.new}}</text>
                     <text class="plan-now-text">新词</text>
                 </view>
                 <view class="plan-now-change-icon-container">
@@ -20,9 +20,9 @@
                 <view class="plan-now-progress-text-container">
                     <view class="plan-now-progress-text">
                         <text >已完成：</text>
-                        <text >0</text>
+                        <text >{{currentBookInfo.studiedNum}}</text>
                         <text >/</text>
-                        <text >2420</text>
+                        <text >{{currentBookInfo.totalNum}}</text>
                         <text >词</text>
                     </view>
                 </view>
@@ -33,22 +33,22 @@
             </view>
         </view>
     </view>
-    <view class="books-block">
+    <view class="books-block" >
         <view class="books-guide">
             <text class="books-guide-text">我的单词书</text>
             <view class="books-add-button" catchtap="toLibrary">添加新书</view>
         </view>
-        <view class="books-container">
+        <view class="books-container" wx:for="{{myBooksList}}" wx:key="{{item.name}}">
             <view class="books-image-container" bindtap="toDictionary">
-                <image class="books-image" src="../../images/books/book2.png" />
+                <image class="books-image" src="{{item.imgUrl}}" />
             </view>
             <view class="books-info-container">
-                <view class="books-name-text">六级真题核心词汇</view>
+                <view class="books-name-text">{{item.name}}</view>
                 <view class="books-progress-text">
                     <text >已完成：</text>
-                    <text >0</text>
+                    <text >{{item.studiedNum}}</text>
                     <text >/</text>
-                    <text >2420</text>
+                    <text >{{item.totalNum}}</text>
                     <text >词</text>
                 </view>
                 <view class="books-info-bottom">
