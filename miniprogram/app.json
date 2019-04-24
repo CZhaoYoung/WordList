@@ -1,8 +1,9 @@
 {
   "pages": [
-        "pages/home/home",
+    
+    "pages/status/status",
+    "pages/home/home",
     "pages/task/task",
-
     "pages/dictionary/dictionary",
     "pages/wordInfo/wordInfo",
     "pages/remind/remind",
@@ -34,8 +35,8 @@
         "text": "home"
       },
       {
-        "pagePath": "pages/index/index",
-        "text": "index"
+        "pagePath": "pages/status/status",
+        "text": "status"
       },
       {
         "pagePath": "pages/userCenter/userCenter",
