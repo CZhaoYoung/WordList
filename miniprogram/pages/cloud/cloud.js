@@ -218,21 +218,24 @@ Page({
       ctx.moveTo(0, 0)
       ctx.setLineWidth(0.5)
       ctx.setStrokeStyle('grey')
+      var cosx = Math.cos(angleX)
+      var sinx = Math.sin(angleX)
+      var cosy = Math.cos(angleY)
+      var siny = Math.sin(angleY)
+      var cosz = Math.cos(angleZ)
+      var sinz = Math.sin(angleZ)
       for (var i = 0; i < words.length / 2; i++) {
-        var cosx = Math.cos(angleX)
-        var sinx = Math.sin(angleX)
+
         var y1 = words[i].y * cosx - words[i].z * sinx
         var z1 = words[i].z * cosx + words[i].y * sinx
         words[i].y = y1
         words[i].z = z1
-        var cosy = Math.cos(angleY)
-        var siny = Math.sin(angleY)
+
         var x2 = words[i].x * cosy - words[i].z * siny
         var z2 = words[i].z * cosy + words[i].x * siny
         words[i].x = x2
         words[i].z = z2
-        var cosz = Math.cos(angleZ)
-        var sinz = Math.sin(angleZ)
+
         var x3 = words[i].x * cosz - words[i].y * sinz
         var y3 = words[i].y * cosz + words[i].x * sinz
         words[i].x = x3
