@@ -30,6 +30,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    totalNum: 8110,
+    masterNum: 7559,
+    studingNum: 249,
+    easyNum: 559,
     progress: {
       date:["4.05", "4.06", "4.07", "4.08", "4.09", "4.10", "4.11"],
       total:[1200, 1292, 1412, 1532, 1672, 1921, 2100],
@@ -56,7 +60,9 @@ Page({
     var ctx1 = wx.createCanvasContext('canvas1');
     ctx1.translate(rpx2px(75),rpx2px(50))
     ctx1.setStrokeStyle("#eeeeee")
+    ctx1.setGlobalAlpha(1)
     ctx1.setFillStyle('#333333')
+    ctx1.setFontSize(rpx2px(20))
     //init grid
     for(var i=0; i<7; i++){
       var x = rpx2px(i*540/6)
@@ -111,6 +117,7 @@ Page({
     ctx1.setStrokeStyle("#eeeeee")
     ctx1.setFillStyle('#333333')
     ctx1.setGlobalAlpha(1)
+    ctx1.setFontSize(rpx2px(20))
     //init grid
     for(var i=0; i<7; i++){
       var x = rpx2px(i*540/6)
