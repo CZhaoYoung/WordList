@@ -62,8 +62,17 @@
             </view>
             <view class="text-content">{{wordInfo.sentenceMeanning}}</view>
         </view>
-        <view class="button-next" bindtap="nextHandle">下一个</view>
         <view class="blank"/>
+        <view class="button-next" bindtap="nextHandle">下一个</view>
+        <view class="query-container" wx:if="{{isQuery}}">
+            <view class="query-wordinfo-container">
+                <text class="query-name-text">{{wordInfo.name}}</text>
+                <image bindtap="exitQuery" class="icon-close-m" src="../../images/icons/exit.png"/>
+                <text class="query-soundmark-text">{{wordInfo.soundmark}}</text>
+            </view>
+            <text class="query-meaning-text">{{wordInfo.meaning}}</text>
+        </view>
+
     </view>
 
     <view class="summary-pattern" wx:else>

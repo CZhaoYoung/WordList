@@ -12,12 +12,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pattern: 0,
+    pattern: 1,
     wordInfo: [],
+    queryWordInfo: [],
     isUnknown: false,
     isEasy: false,
     isReviewing: false,
     isMask: true,
+    isQuery: false,
     summaryList: [],
     nwn1: 0,
     nwn2: 0,
@@ -85,11 +87,40 @@ Page({
   },
 
   selectWord: function(e) {
-    console.log(e);
     var wordInfo = this.data.wordInfo;
-    wordInfo.magicSentence[e.currentTarget.dataset.index].selected = !wordInfo.magicSentence[e.currentTarget.dataset.index].selected;
+    // wordInfo.magicSentence[e.currentTarget.dataset.index].selected = !wordInfo.magicSentence[e.currentTarget.dataset.index].selected;
+    var word;
+    for(var i=0; i<wordInfo.magicSentence.length; i++){
+      if(i != e.currentTarget.dataset.index){
+        wordInfo.magicSentence[i].selected = false;
+      }
+      else{
+        if(wordInfo.magicSentence[i].selected != true){
+          wordInfo.magicSentence[i].selected = true;
+          word = wordInfo.magicSentence[i].word;
+        }
+        else{
+          return
+        }
+      }
+    }
+    // console.log("query="+word)
+    //查询单词等待回调
     that.setData({
-      wordInfo: wordInfo
+      queryWordInfo: wordInfo,
+      wordInfo: wordInfo,
+      isQuery: true
+    })
+  },
+
+  exitQuery: function(e){
+    var wordInfo = this.data.wordInfo;
+    for(var i=0; i<wordInfo.magicSentence.length; i++){
+      wordInfo.magicSentence[i].selected = false
+    }
+    that.setData({
+      wordInfo: wordInfo,
+      isQuery: false
     })
   },
 
