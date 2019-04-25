@@ -87,7 +87,7 @@ Page({
     ctx1.lineTo(rpx2px(540),rpx2px(300))
     ctx1.lineTo(0,rpx2px(300))
     ctx1.fill()
-    ctx1.draw(1)
+    ctx1.draw(true)
     //draw data2
     ctx1.setGlobalAlpha(0.2)
     ctx1.setFillStyle('#2ed573')
@@ -100,7 +100,7 @@ Page({
     ctx1.lineTo(rpx2px(540),rpx2px(300))
     ctx1.lineTo(0,rpx2px(300))
     ctx1.fill()
-    ctx1.draw(1)
+    ctx1.draw(true)
   },
 
   drawCanvas2: function(){
@@ -138,7 +138,7 @@ Page({
       ctx1.rect(x-10, y, 20, rpx2px(300)-y)
     }
     ctx1.fill()
-    ctx1.draw(1)
+    ctx1.draw(true)
     //draw data2
     ctx1.setGlobalAlpha(0.3)
     ctx1.setFillStyle('#e77f67')
@@ -148,7 +148,7 @@ Page({
       ctx1.rect(x-10, y, 20, rpx2px(300)-y)
     }
     ctx1.fill()
-    ctx1.draw(1)
+    ctx1.draw(true)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
