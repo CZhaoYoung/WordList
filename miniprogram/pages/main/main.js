@@ -13,7 +13,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pattern: 1,
+    pattern: 0,
     wordInfo: [],
     queryWordInfo: [],
     isUnknown: false,
@@ -189,7 +189,7 @@ Page({
           progress.studingWords.push(progress.studingWords.shift())
         }
         else{
-          progress.studiedWords.push(progress.studingWords.shift())
+          progress.unstudyWords.push(progress.studingWords.shift())
         }
       }
       else{
@@ -359,6 +359,12 @@ Page({
     that.setData({
       isMask: mask,
       summaryList: summaryList
+    })
+  },
+
+  unknownmark: function(e){
+    that.setData({
+      isUnknown: true
     })
   }
 })

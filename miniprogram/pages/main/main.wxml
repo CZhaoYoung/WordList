@@ -42,6 +42,10 @@
             <text class="text-backout-grey">该词今后将不再学习.</text>
             <text class="text-backout-green">撤销</text>
         </view>
+        <view class="backout-container" bindtap="unknownmark" wx:if="{{!isUnknown&&!isReviewing}}">
+            <text class="text-backout-grey">该词今天不再安排复习.</text>
+            <text class="text-backout-green">撤销</text>
+        </view>
         <view class="wordinfo-container">
             <text class="text-word-m">{{wordInfo.name}}</text>
             <image class="icon-pronouncation-m" src="../../images/icons/sound.png/"/>
