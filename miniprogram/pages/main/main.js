@@ -5,6 +5,7 @@ var isFirst = true;
 var progress = {};
 var summaryCount = 0;
 var type;
+var timeIntv;
 
 Page({
 
@@ -25,7 +26,6 @@ Page({
     nwn2: 0,
     own1: 0,
     own2: 0,
-    timeStart: 0,
     time: 0
   },
 
@@ -36,9 +36,18 @@ Page({
     that = this;
     type = 0;
     var date = new Date()
-    this.data.timeStart = date.getTime()/1000;
     this.initProgress(); 
     this.initWordInfo();
+    timeIntv = setInterval(()=>{
+      var timeMinute = that.data.time
+      var timeMinuteNow = ((new Date()).getTime() - progress.startTime) / 60000
+      timeMinuteNow = parseInt(timeMinuteNow)
+      if(timeMinuteNow > timeMinute){
+        that.setData({
+          time: timeMinuteNow
+        })
+      }
+    }, 1000)
   },
 
   onUnload: function (){
@@ -48,6 +57,7 @@ Page({
     else{
       wx.setStorageSync('oldWordsProgress', progress);
     }
+    clearInterval(timeIntv)
   },
 
   changePattern: function() {
@@ -168,10 +178,6 @@ Page({
         own2: n2
       })
     }
-    var date = new Date()
-    that.setData({
-      time: parseInt((date.getTime()/1000 - that.data.timeStart)/60)
-    })
   },
 
   progressForward: function(first) {
