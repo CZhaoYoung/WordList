@@ -13,6 +13,7 @@ Page({
     let year = now.getFullYear();
     let month = now.getMonth() + 1;
     this.dateInit();
+    console.log(this.data)
     this.setData({
       year: year,
       month: month,
@@ -53,7 +54,6 @@ Page({
     this.setData({
       dateArr: dateArr
     })
-    console.log(dateArr)
     let nowDate = new Date();
     let nowYear = nowDate.getFullYear();
     let nowMonth = nowDate.getMonth() + 1;

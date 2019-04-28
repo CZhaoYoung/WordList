@@ -61,7 +61,8 @@ App({
       unstudyWords: [],
       studingWords: [],
       studiedWords: [],
-      easyWords: []
+      easyWords: [],
+      startTime: (new Date()).getTime()
     }
     progress.totalNum = task.newWords.length;
     progress.unstudyWords = task.newWords;

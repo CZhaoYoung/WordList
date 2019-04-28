@@ -1,15 +1,17 @@
 {
   "pages": [
-    
+            "pages/plan/plan",
+        "pages/task/task",
+
+        "pages/home/home",
+    "pages/calendar/calendar",
+    "pages/main/main",
     "pages/status/status",
-    "pages/home/home",
-    "pages/task/task",
+
     "pages/dictionary/dictionary",
     "pages/wordInfo/wordInfo",
     "pages/remind/remind",
-    "pages/plan/plan",
-    "pages/main/main",
-    "pages/calendar/calendar",
+
     "pages/userCenter/userCenter",
     "pages/index/index",
     "pages/userConsole/userConsole",

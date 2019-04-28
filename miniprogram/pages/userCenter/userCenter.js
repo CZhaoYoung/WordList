@@ -19,7 +19,6 @@ Page({
     this.setData({
       userInfo: data.getFakeUserInfo()
     })
-    console.log(this.data.userInfo);
   }, 
 
   /**
