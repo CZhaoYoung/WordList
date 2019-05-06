@@ -1,0 +1,19 @@
+.tagBall{
+      width: 750rpx;
+      height: 500rpx;
+      position: relative;
+      left: 375rpx;
+      top: 250rpx;
+  }
+  .tag{
+      display: block;
+      position: absolute;
+      left: 0rpx;
+      top: 0rpx;
+      color: #000;
+      text-decoration: none;
+      font-size: 32rpx;
+      font-family: "微软雅黑";
+      font-weight: bold;
+  }
+  .tag:hover{border:1px solid #666;}

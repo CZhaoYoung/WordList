@@ -1,0 +1,6 @@
+
+<view class="tagBall">
+  <a class="tag" wx:for="{{tagEle}}" wx:key="{{index}}" style="opacity:{{item.o}};z-index:{{item.z}};left: {{item.x}}rpx;top: {{item.y}}rpx;transform: scale({{item.s}})">
+    {{item.title}}
+  </a>
+ </view>
