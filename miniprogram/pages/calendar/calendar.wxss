@@ -121,7 +121,7 @@ page{
     position: relative;
     display: inline-block;
     width: 14.285%;
-    color: rgb(71, 71, 71);
+    color: rgb(104, 104, 104);
     text-align: center;
     vertical-align: middle;
 }
@@ -138,6 +138,15 @@ page{
     border-radius: 50%;
     text-align: center;
     color: #fff;
-    background-color: #29bb96;
+    background-color: #ff7944;
     margin: 0 auto;
+}
+
+.signedDay .date-head {
+    width: 60rpx;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    margin: 0 auto;
+    background-color: #29bb96;
 }
