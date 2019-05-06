@@ -1,10 +1,10 @@
 //获取应用实例
-var angleX = Math.PI / 200
-var angleY = Math.PI / 200
-var angleZ = Math.PI / 200
+var angleX = Math.PI / 300
+var angleY = Math.PI / 300
+var angleZ = Math.PI / 300
 var tInt
 const app = getApp()
-const size = 550
+const size = 500
 function rpx2px(rpx) {
   var px = rpx / 750 * wx.getSystemInfoSync().windowWidth
   return px
@@ -195,7 +195,6 @@ Page({
       angleY += res.y / 30
       angleZ += res.z / 30
     })
-    // this.innit()
   },
 
   onUnload: function() {
@@ -214,7 +213,8 @@ Page({
     tInt = setInterval(() => {
       ctx.translate(rpx2px((size / 2 + (750 - size) / 2)), rpx2px((size / 2) + (750 - size) / 2))
       ctx.setFontSize(20)
-      ctx.fillText('center', -ctx.measureText('center').width / 2, 0)
+      //ctx.fillText('center', -ctx.measureText('center').width / 2, 0)
+      ctx.fillText('center', 0, 0)
       ctx.moveTo(0, 0)
       ctx.setLineWidth(0.5)
       ctx.setStrokeStyle('grey')
@@ -242,16 +242,17 @@ Page({
         words[i].y = y3
         words[i].s = (words[i].z + size) / size
         ctx.setFontSize(20 * words[i].s)
-        ctx.fillText(words[i].title, rpx2px(words[i].x) - ctx.measureText(words[i].title).width / 2, rpx2px(words[i].y))
+        //ctx.fillText(words[i].title, rpx2px(words[i].x) - ctx.measureText(words[i].title).width / 2, rpx2px(words[i].y))
+        ctx.fillText(words[i].title, rpx2px(words[i].x), rpx2px(words[i].y))
         ctx.lineTo(rpx2px(words[i].x), rpx2px(words[i].y))
       }
       ctx.stroke()
       ctx.draw()
-    }, 20)
+    }, 30)
   },
   resetAngle: function () {
-    angleX = Math.PI / 200
-    angleY = Math.PI / 200
-    angleZ = Math.PI / 200
+    angleX = Math.PI / 300
+    angleY = Math.PI / 300
+    angleZ = Math.PI / 300
   }
 })
