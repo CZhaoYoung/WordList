@@ -10,7 +10,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    queryWordInfo: {},
+    word: "100"
   },
 
   /**
@@ -22,7 +23,7 @@ Page({
   innit() {
     var tagEle = [
       {
-        title: '被子',
+        title: 'CENTER',
         x: 0,
         y: 0,
         z: 0,
@@ -243,6 +244,11 @@ Page({
       }
     ]
     var words = tagEle
+    words[0].x = -25;
+    words[0].y = 0;
+    words[0].z = 0;
+    words[0].s = 1;
+    words[0].center = 1;
     for (var i = 1; i < words.length; i++) {
       words[i].x = size * Math.random() - (size / 2)
       words[i].y = size * Math.random() - (size / 2)
@@ -328,5 +334,52 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  exitQuery: function (e) {
+    console.log(this.data)
+    var tagEle = this.data.tagEle;
+    for (var i = 0; i < tagEle.length; i++) {
+      tagEle[i].selected = false
+    }
+    this.setData({
+      tagEle: tagEle,
+      isQuery: false
+    })
+  },
+
+  selectWord: function (e) {
+    console.log(this.data)
+    var tagEle = this.data.tagEle;
+    // wordInfo.magicSentence[e.currentTarget.dataset.index].selected = !wordInfo.magicSentence[e.currentTarget.dataset.index].selected;
+    var word;
+    for (var i = 0; i < tagEle.length; i++) {
+      if (i != e.currentTarget.dataset.index) {
+        tagEle[i].selected = false;
+      }
+      else {
+        if (tagEle[i].selected != true) {
+          tagEle[i].selected = true;
+          word = tagEle[i].title;
+        }
+        else {
+          return
+        }
+      }
+    }
+    // console.log("query="+word)
+
+    var wordInfo = {}
+    wordInfo.name = word;
+    wordInfo.sentence = 'not a big X';
+    wordInfo.meaning = "n. 字幕";
+    wordInfo.soundmark = "/a'res/";
+    wordInfo.sentenceMeaning = "且随疾风前行";
+    //查询单词等待回调
+    console.log(tagEle)
+    this.setData({
+      queryWordInfo: wordInfo,
+      tagEle: tagEle,
+      isQuery: true
+    })
+  },
 })
