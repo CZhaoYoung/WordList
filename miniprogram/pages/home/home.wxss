@@ -1,4 +1,35 @@
 /* miniprogram/pages/home/home.wxss */
+/* search */
+.search-container{
+    width: 90%;
+    margin-left: 5%;
+    height: 70rpx;
+    background: #ffffff;
+    margin-top: 20rpx;
+}
+
+.search-input{
+    float: left;
+    width:90%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    color: rgb(82, 82, 82);
+}
+
+.search-icon-container{
+    float: left;
+    height: 70rpx;
+    width: 10%;
+    background: rgb(255, 255, 255);
+}
+
+.search-icon{
+    margin-left: 20%;
+    margin-top: 20%;
+    height: 60%;
+    width: 60%;
+    opacity: 0.5;
+}
 
 /* sign */
 .sign-container{

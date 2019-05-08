@@ -1,11 +1,11 @@
 // miniprogram/pages/home/home.js
 var that
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
+    searchText: "",
     signedNum: 0,
     newWordsNum: 0,
     oldWordsNum: 0,
@@ -66,6 +66,18 @@ Page({
     })
   },
 
+  searchInput: function(e){
+    this.setData({
+      searchText: e.detail.value
+    })
+  },
+
+  search: function(){
+    console.log(this.data.searchText)
+    this.setData({
+      searchText: ""
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
