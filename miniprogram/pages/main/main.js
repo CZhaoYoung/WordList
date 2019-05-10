@@ -3,9 +3,11 @@ var utils = require("../../utils/utils");
 var that;
 var isFirst = true;
 var progress = {};
+var progress1;
+var progress2;
 var summaryCount = 0;
-var type;
 var timeIntv;
+var maxSum;
 
 Page({
 
@@ -34,7 +36,6 @@ Page({
    */
   onLoad: function (options) {
     that = this;
-    type = 0;
     var date = new Date()
     this.initProgress(); 
     this.initWordInfo();
@@ -51,13 +52,17 @@ Page({
   },
 
   onUnload: function (){
-    if(!type){
+    this.saveProgress();
+    clearInterval(timeIntv)
+  },
+
+  saveProgress: function(){
+    if (progress.type==0) {
       wx.setStorageSync('newWordsProgress', progress);
     }
-    else{
+    else {
       wx.setStorageSync('oldWordsProgress', progress);
     }
-    clearInterval(timeIntv)
   },
 
   changePattern: function() {
@@ -70,10 +75,15 @@ Page({
       return
     }
     else if(pattern == 1){
-      if(progress.globalTimeCount%7==0||(progress.studingWords.length==0&&progress.unstudyWords.length==0)){
-        this.createSummaryList()
+      that.data.summaryList.push(that.data.wordInfo);
+      progress.localTimeCount += 1;
+      if(progress.localTimeCount%maxSum==0||(progress.studingWords.length==0&&progress.unstudyWords.length==0)){
+        maxSum = (progress.studingWords.length + progress.unstudyWords.length < 7) ? progress.studingWords.length + progress.unstudyWords.length : 7;
+        progress.localTimeCount = 0;
+        //this.createSummaryList()
         pattern = 2;
         that.setData({
+          summaryList: that.data.summaryList,
           pattern: pattern
         })
       }
@@ -85,12 +95,23 @@ Page({
       }
     }
     else if(pattern == 2){
-      if(progress.globalTimeCount % 7 != 0){
-        console.log("背完了")
+      if(progress.unstudyWords.length==0&&progress.studingWords.length==0){
+        progress.complete=true;
+        this.saveProgress();
+        if(progress.type==0){
+          this.initProgress();
+          this.initWordInfo();
+        }
+        else{
+          wx.navigateBack({
+            delta: 1
+          })
+        }
       }
       pattern = 0;
       that.setData({
-        pattern: pattern
+        pattern: pattern,
+        summaryList: []
       })
     }
 
@@ -135,47 +156,35 @@ Page({
   },
 
   initProgress: function(){
-    var progerss1 = wx.getStorageSync('newWordsProgress');
-    var progress2 = wx.getStorageSync('oldWordsProgress');
-    if(!type){
-      progress = progerss1;
-      this.updateTopBar(1, progress2.totalNum)
+    maxSum = 7;
+    progress1 = wx.getStorageSync('newWordsProgress');
+    progress2 = wx.getStorageSync('oldWordsProgress');
+    if (!(progress1.complete)){
+      progress = progress1;
+      this.updateTopBar()
     }
     else{
       progress = progress2;
-      this.updateTopBar(1, progress1.totalNum);
+      this.updateTopBar()
     }
   },
 
-  updateTopBar: function(first, nP){
-    if(first){
-      if(!type){
-        var own1 = 0;
-        var own2 = nP;
-        that.setData({
-          own1: own1,
-          own2: own2
-        })
-      }
-      else{
-        that.setData({
-          nwn1: nP,
-          nwn2: nP
-        })
-      }
-    }
-    var n1 = progress.studiedWords.length + progress.easyWords.length
-    var n2 = progress.totalNum
-    if(!type){
+  updateTopBar: function(){
+    var numNew = progress1.totalNum
+    var numOld = progress2.totalNum
+    if(progress.type==0){
       that.setData({
-        nwn1: n1,
-        nwn2: n2
+        own1: 0,
+        own2: numOld,
+        nwn1: progress.studiedWords.length + progress.easyWords.length,
+        nwn2: numNew,
       })
-    }
-    else{
+    }else{
       that.setData({
-        own1: n1,
-        own2: n2
+        own1: progress.studiedWords.length + progress.easyWords.length,
+        own2: numOld,
+        nwn1: numNew,
+        nwn2: numNew,
       })
     }
   },
