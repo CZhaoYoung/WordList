@@ -17,13 +17,20 @@
     </view>
 
     <view class="exam-pattern" wx:if="{{pattern==0}}">
+        <view style='overflow:hidden;'>
+          <view class="summary-switch-container">
+              <text class="summary-switch-text">中文提示</text>
+              <switch  checked="{{isChinese}}" color="#7bed9f" style="height: 30px;" bindchange="chineseSwitchChange"/>
+          </view>
+        </view>
         <view class="easymark" bindtap="easymark">
             <image class="icon-easymark" src="../../images/icons/easymark.png"/>
             <text class="text-easymark">标记为太简单</text>
         </view>
-        <text class="text-word">{{wordInfo.name}}</text>
+        <text wx:if="{{!isChinese}}" class="text-word">{{wordInfo.name}}</text>
+        <text wx:else class="text-word-ch">{{wordInfo.meaning[0]}}</text>
         <view class="pronouncation">
-            <image class="icon-pronouncation" src="../../images/icons/sound.png/"/>
+            <image catchtap='pronounce' class="icon-pronouncation" src="../../images/icons/sound.png/"/>
             <!-- <text class="icon-pronouncation">[--]</text> -->
             <text class="text-soundmark">{{wordInfo.soundmark}}</text>
         </view>
@@ -48,12 +55,12 @@
         </view>
         <view class="wordinfo-container">
             <text class="text-word-m">{{wordInfo.name}}</text>
-            <image class="icon-pronouncation-m" src="../../images/icons/sound.png/"/>
+            <image catchtap='pronounce' class="icon-pronouncation-m" src="../../images/icons/sound.png/"/>
             <text class="text-soundmark-m">{{wordInfo.soundmark}}</text>
         </view>
         <view class="dictionary-container">
             <text class="text-title">词典释义</text>
-            <text class="text-content">{{wordInfo.meaning}}</text>
+            <text wx:for="{{wordInfo.meaning}}" class="text-content">{{item}}</text>
             <text class="text-title">例句</text>
             <view class="text-content">
                 <view wx:for="{{wordInfo.magicSentence}}" wx:key="{{sentence.word}}">
@@ -64,7 +71,7 @@
                     <text class="text-content-sentence-word" decode='true'>&nbsp;</text>
                 </view>
             </view>
-            <view class="text-content">{{wordInfo.sentenceMeanning}}</view>
+            <view class="text-content">{{wordInfo.sentenceMeaning}}</view>
         </view>
         <view class="blank"/>
         <view class="button-next" bindtap="nextHandle">下一个</view>
@@ -74,7 +81,7 @@
                 <image bindtap="exitQuery" class="icon-close-m" src="../../images/icons/exit.png"/>
                 <text class="query-soundmark-text">{{wordInfo.soundmark}}</text>
             </view>
-            <text class="query-meaning-text">{{wordInfo.meaning}}</text>
+            <text class="query-meaning-text">{{wordInfo.meaning[0]}}</text>
         </view>
 
     </view>
@@ -97,7 +104,7 @@
                 </view>
                 <view bindtap="wordMask" data-index="{{index}}">
                     <view wx:if="{{item.mask}}" class="summary-word-mask"/>
-                    <view wx:else class="summary-word-meaning">{{item.meaning}}</view>
+                    <view wx:else class="summary-word-meaning">{{item.meaning[0]}}</view>
                 </view>
             </view>
         </view>

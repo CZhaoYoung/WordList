@@ -46,7 +46,7 @@
     right: 0;
     position: fixed;
     background: rgb(243, 243, 243);
-    top: 13%;
+    top: 17%;
     height: 70rpx;
     border-radius: 15% 0% 0% 15% / 50% 0% 0% 50%;
 }
@@ -66,14 +66,20 @@
     margin-left: 10rpx;
 }
 
-.text-word{
+.text-word, .text-word-ch{
     /* background: rgb(255, 218, 218); */
     color: rgb(49, 49, 49);
     display: block;
+    width: 90%;
+    margin-left: 5%;
     text-align: center;
     margin-top: 30%;
     font-size: 70rpx;
     font-weight: bold;
+}
+
+.text-word-ch{
+    font-size: 50rpx;
 }
 
 .pronouncation{

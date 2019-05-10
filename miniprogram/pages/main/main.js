@@ -22,6 +22,7 @@ Page({
     isEasy: false,
     isReviewing: false,
     isMask: true,
+    isChinese: false,
     isQuery: false,
     summaryList: [],
     nwn1: 0,
@@ -39,6 +40,7 @@ Page({
     var date = new Date()
     this.initProgress(); 
     this.initWordInfo();
+    console.log(this.data.wordInfo)
     timeIntv = setInterval(()=>{
       var timeMinute = that.data.time
       var timeMinuteNow = ((new Date()).getTime() - progress.startTime) / 60000
@@ -65,6 +67,13 @@ Page({
     }
   },
 
+  pronounce: function(){
+    const innerAudioContext = wx.createInnerAudioContext()
+    innerAudioContext.autoplay = true
+    innerAudioContext.src = that.data.wordInfo.audioUrl
+    innerAudioContext.onPlay(()=>{})
+  },
+
   changePattern: function() {
     var pattern = that.data.pattern;
     if(pattern == 0){
@@ -80,10 +89,9 @@ Page({
       if(progress.localTimeCount%maxSum==0||(progress.studingWords.length==0&&progress.unstudyWords.length==0)){
         maxSum = (progress.studingWords.length + progress.unstudyWords.length < 7) ? progress.studingWords.length + progress.unstudyWords.length : 7;
         progress.localTimeCount = 0;
-        //this.createSummaryList()
+        this.createSummaryList()
         pattern = 2;
         that.setData({
-          summaryList: that.data.summaryList,
           pattern: pattern
         })
       }
@@ -316,39 +324,44 @@ Page({
   },
 
   createSummaryList: function(){
-    var num = progress.globalTimeCount%7==0?7:progress.globalTimeCount%7;
-    var summaryList = []
-    var i1 = progress.studingWords.length - 1;
-    var i2 = progress.studiedWords.length - 1;
-    var i3 = progress.easyWords.length - 1;
-    //may error
-    while(num--){
-      if(i1<0 && i2<0){
-        continue
-      }
-      if(i1 < 0){
-        summaryList.unshift(progress.studiedWords[i2]);
-        i2--;
-      }
-      else if(i2 < 0){
-        summaryList.unshift(progress.studingWords[i1]);
-        i1--;
-      }
-      else{
-        if(progress.studingWords[i1].timeCount > progress.studiedWords[i2].timeCount){
-          summaryList.unshift(progress.studingWords[i1]);
-          i1--;
-        }
-        else{
-          summaryList.unshift(progress.studiedWords[i2]);
-          i2--;
-        }
-      }
-      summaryList[0].mask = that.data.isMask
+    var summaryList = that.data.summaryList
+    for(let i of summaryList){
+      i.mask = that.data.isMask
     }
     that.setData({
       summaryList: summaryList
     })
+    // var num = progress.globalTimeCount%7==0?7:progress.globalTimeCount%7;
+    // var summaryList = []
+    // var i1 = progress.studingWords.length - 1;
+    // var i2 = progress.studiedWords.length - 1;
+    // var i3 = progress.easyWords.length - 1;
+    // //may error
+    // while(num--){
+    //   if(i1<0 && i2<0){
+    //     continue
+    //   }
+    //   if(i1 < 0){
+    //     summaryList.unshift(progress.studiedWords[i2]);
+    //     i2--;
+    //   }
+    //   else if(i2 < 0){
+    //     summaryList.unshift(progress.studingWords[i1]);
+    //     i1--;
+    //   }
+    //   else{
+    //     if(progress.studingWords[i1].timeCount > progress.studiedWords[i2].timeCount){
+    //       summaryList.unshift(progress.studingWords[i1]);
+    //       i1--;
+    //     }
+    //     else{
+    //       summaryList.unshift(progress.studiedWords[i2]);
+    //       i2--;
+    //     }
+    //   }
+    //   summaryList[0].mask = that.data.isMask
+    //}
+
   },
   
   wordMask: function(e){
@@ -368,6 +381,12 @@ Page({
     that.setData({
       isMask: mask,
       summaryList: summaryList
+    })
+  },
+
+  chineseSwitchChange: function(e){
+    this.setData({
+      isChinese: !this.data.isChinese
     })
   },
 
