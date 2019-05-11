@@ -39,6 +39,7 @@ var getFakeTask = ()=>{
     word.meaning = "n. 字幕";
     word.soundmark = "/a'res/";
     word.sentenceMeaning = "且随疾风前行";
+    word.audioUrl = "";
     task.newWords.push(word);
     task.oldWords.push(word);
   }
