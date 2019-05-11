@@ -1,6 +1,6 @@
 // miniprogram/pages/userCenter/userCenter.js
-var data = require("../../utils/data.js");
-var that;
+var data = require("../../utils/data.js")
+var that
 
 Page({
 
@@ -85,6 +85,12 @@ Page({
   toRemindPage: function(){
     wx.navigateTo({
       url: '../remind/remind',
+    })
+  },
+
+  exitMiniprogram: function(){
+    wx.navigateBack({
+      delta: 0
     })
   }
 })
