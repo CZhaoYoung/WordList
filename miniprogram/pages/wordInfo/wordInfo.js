@@ -18,12 +18,14 @@ Page({
    */
   onLoad: function (options) {
     that = this;
+    console.log(options.Wid)
     wx.cloud.callFunction({
-      name: 'getWordInfo',
+      name: 'getWord',
       data: {
-        name: options.Wid
+        Wid: options.Wid
       },
       success: res => {
+        console.log(res)
         if(!res.result.valid){
           wx.showToast({
             title: '无该单词信息',
@@ -47,6 +49,11 @@ Page({
           icon: 'none',
           duration: 2000
         })
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 1
+          })
+        }, 2000)
       }
     })
 
