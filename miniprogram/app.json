@@ -1,9 +1,9 @@
 {
   "pages": [
+            "pages/home/home",
             "pages/plan/plan",
         "pages/task/task",
 
-        "pages/home/home",
     "pages/calendar/calendar",
     "pages/main/main",
     "pages/status/status",
