@@ -40,6 +40,7 @@ Page({
     var date = new Date()
     this.initProgress(); 
     this.initWordInfo();
+    this.pronounce();
     console.log(this.data.wordInfo)
     timeIntv = setInterval(()=>{
       var timeMinute = that.data.time
@@ -97,6 +98,8 @@ Page({
       }
       else{
         pattern = 0;
+        if(!that.data.isChinese)
+          this.pronounce();
         that.setData({
           pattern: pattern
         })
@@ -117,6 +120,8 @@ Page({
         }
       }
       pattern = 0;
+      if (!that.data.isChinese)
+        this.pronounce();
       that.setData({
         pattern: pattern,
         summaryList: []
