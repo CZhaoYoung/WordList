@@ -24,7 +24,7 @@ Page({
   onLoad: function (options) {
     that = this
     that.setData({
-      type : 1
+      type : parseInt(options.type)
     })
     var currentWordsList
     if(that.data.type){
@@ -129,6 +129,19 @@ Page({
       isMask: mask,
       currentWordsList: currentWordsList
     })
+  },
+
+  viewWordInfo: function(e){
+    wx.navigateTo({
+      url: '../wordInfo/wordInfo?Wid=' + that.data.currentWordsList[e.currentTarget.dataset.index].Wid
+    })
+  },
+
+  pronounce: function(e){
+    const innerAudioContext = wx.createInnerAudioContext()
+    innerAudioContext.autoplay = true
+    innerAudioContext.src = that.data.currentWordsList[e.currentTarget.dataset.index].audioUrl
+    innerAudioContext.onPlay(() => { })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

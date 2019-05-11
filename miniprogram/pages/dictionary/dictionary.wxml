@@ -34,15 +34,15 @@
     </view>
 </view>
 
-<view class="word" wx:for="{{currentWordsList}}" wx:key="{{item.word}}">
-    <view class="word-top">
+<view class="word" data-index="{{index}}"  wx:for="{{currentWordsList}}" wx:key="{{item.word}}">
+    <view class="word-top" catchtap="viewWordInfo" data-index="{{index}}">
         <text class="word-text">{{item.name}}</text>
-        <view class="word-icon-container">
+        <view class="word-icon-container" catchtap="pronounce" data-index="{{index}}">
             <image class="word-icon" src="../../images/icons/sound.png"/>
         </view>
     </view>
-    <view bindtap="wordMask" data-index="{{index}}">
+    <view catchtap="wordMask" data-index="{{index}}">
         <view wx:if="{{item.mask}}" class="word-mask" />
-        <view wx:else class="word-meaning">{{item.meaning}}</view>
+        <view wx:else class="word-meaning">{{item.meaning[0]}}</view>
     </view>
 </view>
