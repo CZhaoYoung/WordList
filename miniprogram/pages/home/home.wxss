@@ -35,7 +35,7 @@
 .sign-container{
     /* background: rgb(255, 170, 170); */
     width: 90%;
-    margin-top: 70rpx;
+    margin-top: 30rpx;
     position: relative;
 }
 

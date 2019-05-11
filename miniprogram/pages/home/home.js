@@ -29,21 +29,15 @@ Page({
     var newWordsUnstudyNum = newWordsProgress.unstudyWords.length + newWordsProgress.studingWords.length  
     var oldWordsUnstudyNum =  oldWordsProgress.studingWords.length + oldWordsProgress.unstudyWords.length
     var unstudyWordsNum = newWordsUnstudyNum + oldWordsUnstudyNum
-    var type
-    if(newWordsUnstudyNum > 0){
-      type = 0
-    }
-    else if(oldWordsUnstudyNum > 0){
-      type = 1
-    }
-    else{
-      type = 2
+    var complete=false;
+    if(newWordsProgress.complete&&oldWordsProgress.complete){
+      complete=true;
     }
     that.setData({
       newWordsNum: newWordsNum,
       oldWordsNum: oldWordsNum,
       unstudyWordsNum: unstudyWordsNum,
-      type: type
+      complete: complete
     })
   },
 
@@ -141,9 +135,9 @@ Page({
     })
   },
 
-  toDictionary: function(){
+  toDictionary: function(e){
     wx.navigateTo({
-      url: '../dictionary/dictionary',
+      url: '../dictionary/dictionary?type='+e.currentTarget.dataset.type,
     })
   }
 })
