@@ -23,7 +23,7 @@
               <switch  checked="{{isChinese}}" color="#7bed9f" style="height: 30px;" bindchange="chineseSwitchChange"/>
           </view>
         </view>
-        <view class="easymark" bindtap="easymark">
+        <view class="easymark" catchtap="easymark">
             <image class="icon-easymark" src="../../images/icons/easymark.png"/>
             <text class="text-easymark">标记为太简单</text>
         </view>
@@ -39,17 +39,17 @@
             <view class="text-sentence">{{wordInfo.sentence}}</view>
         </view>
         <view class="button-container">
-            <view class="button-remember" bindtap="knownHandle">想起来了</view>
-            <view class="button-forget" bindtap="unknownHandle">没想起来</view>
+            <view class="button-remember" catchtap="knownHandle">想起来了</view>
+            <view class="button-forget" catchtap="unknownHandle">没想起来</view>
         </view>
     </view>
 
     <view class="memory-pattern" wx:elif="{{pattern==1}}">
-        <view class="backout-container" bindtap="uneasymark" wx:if="{{isEasy}}">
+        <view class="backout-container" catchtap="uneasymark" wx:if="{{isEasy}}">
             <text class="text-backout-grey">该词今后将不再学习.</text>
             <text class="text-backout-green">撤销</text>
         </view>
-        <view class="backout-container" bindtap="unknownmark" wx:if="{{!isUnknown&&!isReviewing}}">
+        <view class="backout-container" catchtap="unknownmark" wx:if="{{!isUnknown&&!isReviewing}}">
             <text class="text-backout-grey">该词今天不再安排复习.</text>
             <text class="text-backout-green">撤销</text>
         </view>
@@ -65,23 +65,23 @@
             <view class="text-content">
                 <view wx:for="{{wordInfo.magicSentence}}" wx:key="{{sentence.word}}">
                     <text wx:if="{{item.type==0}}" class="text-content-sentence-word" data-index="{{index}}">{{item.word}}</text>
-                    <text wx:if="{{item.selected}}" class="text-content-sentence-word-selected" data-index="{{index}}" bindtap='selectWord'>{{item.word}}</text>
-                    <text wx:elif="{{item.type==1}}" class="text-content-sentence-word" data-index="{{index}}" bindtap='selectWord'>{{item.word}}</text>
-                    <text wx:elif="{{item.type==2}}" class="text-content-sentence-word-major" data-index="{{index}}" bindtap='selectWord'>{{item.word}}</text>
+                    <text wx:if="{{item.selected}}" class="text-content-sentence-word-selected" data-index="{{index}}" catchtap='selectWord'>{{item.word}}</text>
+                    <text wx:elif="{{item.type==1}}" class="text-content-sentence-word" data-index="{{index}}" catchtap='selectWord'>{{item.word}}</text>
+                    <text wx:elif="{{item.type==2}}" class="text-content-sentence-word-major" data-index="{{index}}" catchtap='selectWord'>{{item.word}}</text>
                     <text class="text-content-sentence-word" decode='true'>&nbsp;</text>
                 </view>
             </view>
             <view class="text-content">{{wordInfo.sentenceMeaning}}</view>
         </view>
         <view class="blank"/>
-        <view class="button-next" bindtap="nextHandle">下一个</view>
-        <view class="query-container" wx:if="{{isQuery}}">
+        <view class="button-next" catchtap="nextHandle">下一个</view>
+        <view class="query-container" wx:if="{{isQuery}}" catchtap='viewQueryWordInfo'>
             <view class="query-wordinfo-container">
-                <text class="query-name-text">{{wordInfo.name}}</text>
-                <image bindtap="exitQuery" class="icon-close-m" src="../../images/icons/exit.png"/>
-                <text class="query-soundmark-text">{{wordInfo.soundmark}}</text>
+                <text class="query-name-text">{{queryWordInfo.name}}</text>
+                <image catchtap="exitQuery" class="icon-close-m" src="../../images/icons/exit.png"/>
+                <text class="query-soundmark-text">{{queryWordInfo.soundmark}}</text>
             </view>
-            <text class="query-meaning-text">{{wordInfo.meaning[0]}}</text>
+            <text class="query-meaning-text">{{queryWordInfo.meaning[0]}}</text>
         </view>
 
     </view>
@@ -102,13 +102,13 @@
                         <image class="summary-word-icon" src="../../images/icons/sound.png"/>
                     </view>
                 </view>
-                <view bindtap="wordMask" data-index="{{index}}">
+                <view catchtap="wordMask" data-index="{{index}}">
                     <view wx:if="{{item.mask}}" class="summary-word-mask"/>
                     <view wx:else class="summary-word-meaning">{{item.meaning[0]}}</view>
                 </view>
             </view>
         </view>
         <view class="blank"/>
-        <view class="button-next" bindtap="changePattern">下一组</view>
+        <view class="button-next" catchtap="changePattern">下一组</view>
     </view>
 </view>

@@ -22,7 +22,8 @@ Page({
     wx.cloud.callFunction({
       name: 'getWord',
       data: {
-        Wid: options.Wid
+        Wid: options.Wid,
+        name: options.name
       },
       success: res => {
         console.log(res)
@@ -87,12 +88,42 @@ Page({
         }
       }
     }
+    that.setData({
+      isQuery: false,
+      wordInfo: wordInfo
+    })
     // console.log("query="+word)
     //查询单词等待回调
-    that.setData({
-      queryWordInfo: wordInfo,
-      wordInfo: wordInfo,
-      isQuery: true
+    wx.cloud.callFunction({
+      name: 'getWord',
+      data: {
+        name: word
+      },
+      success: res => {
+        console.log(res)
+        if (!res.result.valid) {
+          wx.showToast({
+            title: '无该单词信息',
+            icon: 'none',
+            duration: 2000
+          })
+          this.exitQuery()
+        }
+        else {
+          that.setData({
+            queryWordInfo: res.result.wordInfo,
+            isQuery: true
+          })
+        }
+      },
+      fail: err => {
+        wx.showToast({
+          title: '获取单词信息失败',
+          icon: 'none',
+          duration: 2000
+        })
+        this.exitQuery()
+      }
     })
   },
 
@@ -119,5 +150,11 @@ Page({
     that.updateWordInfo()
     that.changePattern()
     that.updateTopBar()
+  },
+
+  viewQueryWordInfo: function (e) {
+    wx.navigateTo({
+      url: '../wordInfo/wordInfo?name=' + that.data.queryWordInfo.name,
+    })
   }
 })
